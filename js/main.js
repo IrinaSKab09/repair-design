@@ -1,3 +1,4 @@
+/*
 document.addEventListener("DOMContentLoaded", function(event) { 
 //отслеживаем событие на сайте для выполнения функции
   const modal = document.querySelector('.modal');
@@ -31,6 +32,33 @@ document.addEventListener("DOMContentLoaded", function(event) {
     if (event.target == modal) switchModal();
   });
   //закрытие модального окна кликом по пустому месту за его пределами
+
+});
+*/
+
+$(document).ready(function () {
+  var modal = $('.modal'),
+      modalBtn = $('[data-toggle=modal]'),
+      closeBtn = $('.modal__close');
+
+  modalBtn.on('click', function () {
+    modal.toggleClass('modal--visible');
+
+  });
+  closeBtn.on('click', function () {
+    modal.toggleClass('modal--visible');
+
+  });
+
+  $(document).keydown(function(event) {
+    if (event.code == 'Escape') 
+    modal.toggleClass('modal--visible');
+  });
+
+  $(document).on('click', function(event) {
+    if (modal.is(event.target))
+    modal.toggleClass('modal--visible');
+  });
 
 });
 
