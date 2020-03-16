@@ -324,6 +324,8 @@ template {
   border-radius: 2px;
   text-transform: uppercase;
   font-size: 0.93rem; }
+  .button:focus {
+    outline: none; }
   .button:hover {
     cursor: pointer; }
   .button--primary {
@@ -390,6 +392,21 @@ template {
   max-width: 1256px;
   margin: auto; }
 
+.row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  max-width: 88.286rem; }
+
+.col-30 {
+  flex-basis: 30%; }
+
+.col-45 {
+  width: 45%; }
+
+.col-55 {
+  width: 55%; }
+
 *, *:before, *:after {
   box-sizing: border-box; }
 
@@ -405,10 +422,37 @@ img {
 
 .section {
   padding: 60px 0; }
+  .section--dark {
+    background-color: #131313;
+    color: #ffffff; }
   .section-title {
-    text-align: center;
-    text-transform: uppercase;
-    font-family: 'Yeseva One', cursive; }
+    text-align: center; }
+    .section-title--left {
+      text-align: left; }
+    .section-title__heading {
+      text-transform: uppercase;
+      font-family: 'Yeseva One', cursive;
+      line-height: 138.6%; }
+      .section-title__heading--primary {
+        margin: 0;
+        margin-bottom: 1.48rem;
+        font-size: 1.75rem;
+        line-height: 2.64rem;
+        color: #E3B873; }
+    .section-title__word {
+      display: flex;
+      align-items: center; }
+      .section-title__word::after {
+        content: '';
+        width: 92px;
+        height: 2px;
+        background-color: #E3B873;
+        margin-left: 2.3rem; }
+    .section-title__text {
+      margin-bottom: 2.1rem;
+      max-width: 31.57rem;
+      font-size: 1.28rem;
+      line-height: 2.07rem; }
     .section-title__image {
       display: flex;
       justify-content: center;
@@ -473,6 +517,15 @@ img {
     width: 100%;
     height: 100%;
     background-color: rgba(19, 19, 19, 0.7); }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 3.465rem;
+    background: #131313; }
   .hero__content {
     position: relative;
     max-width: 47.85rem;
@@ -496,6 +549,7 @@ img {
     height: 100%; }
   .hero__scroll-down {
     position: absolute;
+    z-index: 3;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -546,21 +600,60 @@ img {
   .title--primary {
     color: #E3B873; }
 
+.swiper-slide {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 6rem; }
+  .swiper-slide__text {
+    flex-basis: 34%;
+    margin-bottom: 1.3rem; }
+  .swiper-slide__heading {
+    font-size: 1.26rem;
+    line-height: 1.78rem;
+    font-family: 'Yeseva One', cursive;
+    color: #E3B873;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem; }
+  .swiper-slide__value {
+    display: block;
+    max-width: 8rem;
+    font-size: 1.05rem;
+    line-height: 1.4rem; }
+
+.swiper-pagination-bullet {
+  background-color: rgba(255, 255, 255, 0.3);
+  width: 0.7rem;
+  height: 0.7rem;
+  margin: 0 0.6rem !important; }
+  .swiper-pagination-bullet-active {
+    background-color: #ffffff; }
+
+.swiper-button-prev, .swiper-button-next {
+  bottom: 0;
+  top: auto;
+  background-size: 42px;
+  width: 42px;
+  height: 14px; }
+  .swiper-button-prev::after, .swiper-button-next::after {
+    display: none; }
+
+.swiper-button-prev {
+  left: 0;
+  background: url("../img/arrow-prev.svg") no-repeat; }
+
+.swiper-button-next {
+  background: url("../img/arrow-next.svg") no-repeat; }
+
+.swiper-container-horizontal > .swiper-pagination-bullets {
+  width: auto;
+  bottom: -1px; }
+
 .types__section-title {
   margin-bottom: 2rem;
   text-align: center;
   font-size: 0.96rem;
   font-family: 'Yeseva One', cursive;
   color: #181818; }
-
-.row {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  max-width: 88.286rem; }
-
-.col {
-  flex-basis: 32%; }
 
 .card {
   max-width: 28rem; }
@@ -663,6 +756,8 @@ img {
     border: none;
     margin: 12px;
     cursor: pointer; }
+    .modal__close:focus {
+      outline: none; }
   .modal__title {
     font-family: 'Yeseva One', cursive;
     font-size: 1.357rem;
@@ -694,6 +789,16 @@ img {
   .nav__item {
     margin-right: 1rem; } }
 
+@media screen and (max-width: 1100px) {
+  .section-title__text {
+    max-width: 28rem;
+    font-size: 1.2rem;
+    line-height: 1.5rem; }
+  .swiper-slide__text {
+    margin-bottom: 1.3rem; }
+  .swiper-slide__heading {
+    font-size: 1rem; } }
+
 @media screen and (max-width: 992px) {
   .logo {
     font-size: 1rem; }
@@ -711,7 +816,11 @@ img {
     font-size: 1.5rem;
     margin-bottom: 3rem; }
   .hero__button {
-    min-width: 15rem; } }
+    min-width: 15rem; }
+  .col-45 {
+    width: 55%; }
+  .col-55 {
+    width: 45%; } }
 
 @media screen and (max-width: 768px) {
   .nav {
@@ -744,7 +853,28 @@ img {
   .types__card, .design__card {
     margin-bottom: 6.76rem; }
   .card__text {
-    margin-left: 0; } }
+    margin-left: 0; }
+  .col-45 {
+    width: 100%; }
+  .col-55 {
+    width: 100%; }
+  .section-title__word::after {
+    display: none; }
+  .swiper-slide {
+    margin-bottom: 3.3rem; }
+    .swiper-slide__text {
+      flex-basis: 50%;
+      margin-bottom: 1.3rem; }
+    .swiper-slide__heading {
+      font-size: 1.17rem;
+      margin-bottom: 0.92rem; }
+      .swiper-slide__heading__value {
+        font-size: 1.15rem;
+        line-height: 1.6rem; }
+    .swiper-slide__img {
+      margin: 2.7rem 0 0 0;
+      width: 28.33rem;
+      height: 16.83rem; } }
 
 @media screen and (max-width: 576px) {
   html, body {
@@ -782,6 +912,15 @@ img {
   .section-title__heading {
     font-size: 1.83rem;
     line-height: 138.6%; }
+    .section-title__heading--primary {
+      font-size: 1.65rem;
+      line-height: 150%;
+      margin-bottom: 2.1rem; }
+  .section-title__text {
+    margin-bottom: 1.7rem;
+    max-width: 24.3rem;
+    font-size: 1.17rem;
+    line-height: 160%; }
   .types {
     margin-bottom: 6.8rem; }
     .types__section-title {
@@ -838,8 +977,15 @@ img {
     font-size: 1.3rem; }
   .hero__button {
     display: block;
-    min-width: 25rem; } }
+    min-width: 25rem; }
+  .projects {
+    padding: 2rem; } }
 
 @media screen and (max-height: 610px) {
   .hero__scroll-down {
     display: none; } }
+
+@media screen and (max-height: 534px) {
+  .modal {
+    overflow: auto;
+    height: 510px; } }
