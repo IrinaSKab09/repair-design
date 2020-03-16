@@ -986,6 +986,6 @@ img {
     display: none; } }
 
 @media screen and (max-height: 534px) {
-  .modal {
-    overflow: auto;
-    height: 510px; } }
+  .modal__dialog {
+    height: 100%;
+    overflow-y: scroll; } }
