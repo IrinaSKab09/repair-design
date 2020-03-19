@@ -81,5 +81,111 @@ $(document).ready(function () {
 
   new WOW().init();
 
+  //Валидация формы
+  $('.modal__form').validate({
+    errorClass: "invalid",
+    rules: {
+      // правило-объект
+      userName: {
+        required: true,
+        minlength: 2,
+        maxlength: 15
+      },
+      // правило-объект
+      userPhone: {
+        required: true,
+        minlength: 17
+      },
+      // правило-объект
+      userEmail: {
+        required: true,
+        email: true
+      }
+    }, //сообщения
+    messages: {
+      userName: {
+        required: "Заполните поле",
+        minlength: "Имя не короче двух букв",
+        maxlength: "Имя не больше 15 букв",
+      },
+      userPhone: {
+        required: "Заполните поле",
+        minlength: "Номер телефона указан неполностью",
+      },
+      userEmail: {
+        required: "Заполните поле",
+        email: "Введите корректный email"
+      }
+    }
+  });
+
+  $('.control__form').validate({
+    errorClass: "invalid",
+    rules: {
+      // правило-объект
+      userName: {
+        required: true,
+        minlength: 2,
+        maxlength: 15
+      },
+      // правило-объект
+      userPhone: {
+        required: true,
+        minlength: 17
+      }
+    }, 
+    //сообщения
+    messages: {
+      userName: {
+        required: "Заполните поле",
+        minlength: "Имя не короче двух букв",
+        maxlength: "Имя не больше 15 букв",
+      },
+      userPhone: {
+        required: "Заполните поле",
+        minlength: "Номер телефона указан неполностью",
+      }
+    }
+  });
+
+  $('.footer__form').validate({
+    errorClass: "invalid",
+    rules: {
+      // правило-объект
+      userName: {
+        required: true,
+        minlength: 2,
+        maxlength: 15
+      },
+      // правило-объект
+      userPhone: {
+        required: true,
+        minlength: 17
+      },
+      // правило-объект
+      userQuestion: {
+        required: true
+      }
+    },
+    //сообщения
+    messages: {
+      userName: {
+        required: "Заполните поле",
+        minlength: "Имя не короче двух букв",
+        maxlength: "Имя не больше 15 букв",
+      },
+      userPhone: {
+        required: "Заполните поле",
+        minlength: "Номер телефона указан неполностью",
+      },
+      userQuestion: {
+        required: "Заполните поле",
+      }
+    }
+  });
+
+  // маска для телефона
+
+  $('[type=tel]').mask('+7(000) 000-00-00', {placeholder: "+7 (___) ___-__-__"});
 });
 

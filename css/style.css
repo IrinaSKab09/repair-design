@@ -390,6 +390,12 @@ template {
   .policy__label--center {
     justify-content: center; }
 
+label.invalid {
+  color: tomato; }
+
+input.invalid {
+  border-bottom: 1px solid tomato; }
+
 .container {
   width: 85%;
   max-width: 1256px;
@@ -701,10 +707,12 @@ img {
   margin: auto;
   justify-content: space-between; }
 
-.control__input-group {
-  display: flex;
-  flex-direction: column;
-  flex-basis: 30%; }
+.control__input {
+  color: #131313; }
+  .control__input-group {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 30%; }
 
 .control__label {
   margin-bottom: -0.5rem; }
@@ -797,7 +805,6 @@ img {
   .footer__wrap {
     max-width: 63.07rem;
     margin: auto;
-    margin-top: -19rem;
     margin-bottom: 3.514rem;
     padding: 2.5rem;
     background-color: #181818; }
@@ -880,10 +887,12 @@ img {
   .modal__form {
     display: flex;
     flex-direction: column; }
-  .modal__input {
+  .modal__input-group {
+    display: flex;
+    flex-direction: column;
     margin-bottom: 3.428rem; }
-    .modal__input:last-of-type {
-      margin-bottom: 1rem; }
+  .modal__input:last-of-type {
+    margin-bottom: 1rem; }
   .modal__policy {
     margin-bottom: 2.7rem; }
   .modal__button {
