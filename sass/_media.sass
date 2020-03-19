@@ -185,7 +185,7 @@
       padding: 1rem 2.8rem
       font-size: 1.25rem
   .design
-    background: $dark
+    
     &__section-title
       color: $light
     &__section-description
@@ -253,6 +253,32 @@
     &__play
       max-width: 5.1rem
       max-height: 5.1rem
+  .footer
+    background: $dark
+    &__wrap
+      margin-top: 0
+      padding: 2.5rem 1.1rem
+      background-color: $dark
+    &__title
+      font-size: 1.67rem
+      margin-bottom: 4.6rem
+    &__input
+      font-size: 1.5rem
+      &-group
+        flex-basis: 100%
+        &--bottom
+          margin-bottom: 2rem
+        &--full-width
+          margin-bottom: 0.5rem
+    &__policy
+      margin-bottom: 5.8rem
+    &__button
+      padding: 1.5rem 11.75rem
+  .policy
+    &__label
+      &--center
+        justify-content: flex-start
+        font-size: 1.33rem
 
 @media screen and (max-width: 375px)
   .container
@@ -272,7 +298,7 @@
     padding: 2rem
 
 @media screen and (max-width: 350px)
-  .control
+  .control, .footer
     padding: 1rem
     &__button
       padding: 1rem 9rem
