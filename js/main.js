@@ -84,6 +84,7 @@ $(document).ready(function () {
   //Валидация формы
   $('.modal__form').validate({
     errorClass: "invalid",
+    errorElement: "div",
     rules: {
       // правило-объект
       userName: {
@@ -100,7 +101,8 @@ $(document).ready(function () {
       userEmail: {
         required: true,
         email: true
-      }
+      },
+      policyCheckbox: "required"
     }, //сообщения
     messages: {
       userName: {
@@ -115,12 +117,16 @@ $(document).ready(function () {
       userEmail: {
         required: "Заполните поле",
         email: "Введите корректный email"
+      },
+      policyCheckbox: {
+        required: "Необходимо проставить отметку"
       }
     }
   });
 
   $('.control__form').validate({
     errorClass: "invalid",
+    errorElement: "div",
     rules: {
       // правило-объект
       userName: {
@@ -132,7 +138,8 @@ $(document).ready(function () {
       userPhone: {
         required: true,
         minlength: 17
-      }
+      },
+      policyCheckbox: "required"
     }, 
     //сообщения
     messages: {
@@ -144,12 +151,16 @@ $(document).ready(function () {
       userPhone: {
         required: "Заполните поле",
         minlength: "Номер телефона указан неполностью",
+      },
+      policyCheckbox: {
+        required: "Необходимо проставить отметку"
       }
     }
   });
 
   $('.footer__form').validate({
     errorClass: "invalid",
+    errorElement: "div",
     rules: {
       // правило-объект
       userName: {
@@ -165,7 +176,8 @@ $(document).ready(function () {
       // правило-объект
       userQuestion: {
         required: true
-      }
+      },
+      policyCheckbox: "required"
     },
     //сообщения
     messages: {
@@ -180,6 +192,9 @@ $(document).ready(function () {
       },
       userQuestion: {
         required: "Заполните поле",
+      },
+      policyCheckbox: {
+        required: "Необходимо проставить отметку"
       }
     }
   });

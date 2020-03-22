@@ -192,13 +192,13 @@
         <form action="#" class="form control__form">
           <div class="control__input-group control__input-group--bottom">
             <label for="user-name-control" class="label form__label control__label">Имя</label>
-            <input type="text" name="userName" class="input form__input control__input" id="user-name-control"
-              placeholder="Как вас зовут:">
+            <input type="text" autocomplete="off" name="userName" class="input form__input control__input"
+              id="user-name-control" placeholder="Как вас зовут:">
           </div>
           <div class="control__input-group">
             <label for="user-phone-control" class="label form__label control__label">Телефон</label>
-            <input type="tel" name="userPhone" class="input form__input control__input" id="user-phone-control"
-              placeholder="Ваш номер телефона:">
+            <input type="tel" autocomplete="off" name="userPhone" class="input form__input control__input"
+              id="user-phone-control" placeholder="Ваш номер телефона:">
           </div>
           <button class="button button--primary control__button">Отправить</button>
           <div class="policy control__policy">
@@ -468,18 +468,20 @@
         <form action="#" class="form footer__form">
           <div class="input-group footer__input-group">
             <label for="user-name-footer" class="label form__label label--light">Имя</label>
-            <input type="text" name="userName" class="input form__input footer__input input--light footer__input-group--bottom" id="user-name-footer"
+            <input type="text" autocomplete="off" name="userName"
+              class="input form__input footer__input input--light footer__input-group--bottom" id="user-name-footer"
               placeholder="Как вас зовут:">
           </div>
           <div class="input-group footer__input-group">
             <label for="user-phone-footer" class="label form__label label--light">Телефон</label>
-            <input type="tel" name="userPhone"
+            <input type="tel" autocomplete="off" name="userPhone"
               class="input form__input footer__input input--light footer__input-group--bottom" id="user-phone-footer"
               placeholder="Ваш номер телефона:">
           </div>
           <div class="input-group footer__input-group footer__input-group--full-width">
             <label for="user-question-footer" class="label form__label label--light">Вопрос</label>
-            <input type="text" name="userQuestion" class="input form__input footer__input input--light" id="user-question-footer"
+            <input type="text" autocomplete="off" name="userQuestion"
+              class="input form__input footer__input input--light" id="user-question-footer"
               placeholder="Я хочу спросить:">
           </div>
           <div class="policy footer__policy">
@@ -492,6 +494,17 @@
         <!-- /.form modal__form -->
       </div>
       <!-- /.footer-wrap -->
+      <div class="footer__description">
+        <p class="footer__text">Ростов на дону, Торговый центр Plaza
+          Прямой&nbsp;телефон +7 (999) 768 32 99</p>
+        <div class="footer__links">
+          <a class="footer__link footer__link--right"><img src="img/footer/icon-3.svg" alt="mail"></a>
+          <a class="footer__link"><img src="img/footer/icon-4.svg" alt="instagram"></a>
+        </div>
+        <div class="map footer__map">
+          <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A54ce62ceb22cbc677aa582d33ec3d7ced1759d8f4d11df759c21b899d72b9a11&amp;width:100%;height:100%;lang=ru_RU&amp"></script>
+        </div>
+      </div>
     </div>
     <!-- /.container -->
     <div class="footer__menu">
@@ -524,18 +537,18 @@
       <form action="#" class="form modal__form">
         <div class="input-group modal__input-group">
           <label for="user-name" class="label form__label label--light">Имя</label>
-          <input type="text" name="userName" class="input form__input modal__input input--light" id="user-name"
-            placeholder="Как вас зовут:">
+          <input type="text" autocomplete="off" name="userName" class="input form__input modal__input input--light"
+            id="user-name" placeholder="Как вас зовут:">
         </div>
         <div class="input-group modal__input-group">
           <label for="user-phone" class="label form__label label--light">Телефон</label>
-          <input type="tel" name="userPhone" class="input form__input modal__input input--light" id="user-phone"
-            placeholder="Ваш номер телефона:">
+          <input type="tel" autocomplete="off" name="userPhone" class="input form__input modal__input input--light"
+            id="user-phone" placeholder="Ваш номер телефона:">
         </div>
         <div class="input-group modal__input-group">
           <label for="user-email" class="label form__label label--light">Email</label>
-          <input type="email" name="userEmail" class="input form__input modal__input input--light" id="user-email"
-            placeholder="Ваш email">
+          <input type="email" autocomplete="off" name="userEmail" class="input form__input modal__input input--light"
+            id="user-email" placeholder="Ваш email">
         </div>
         <div class="policy modal__policy">
           <input type="checkbox" name="policyCheckbox" id="policy-checkbox" class="policy__checkbox" checked>

@@ -39,13 +39,16 @@
   &--light
     &::placeholder
       color: $light
+  &-group
+    position: relative
 .policy
   &__checkbox
     opacity: 0
     visibility: hidden
-    &:checked + .policy__label
-      &::before
-        background: $primary url('../img/check.svg') no-repeat center / 0.8rem
+    &:checked ~ 
+      .policy__label
+        &::before
+          background: $primary url('../img/check.svg') no-repeat center / 0.8rem
   &__label
     display: flex
     align-items: center
@@ -60,10 +63,14 @@
       margin-right: 0.64rem
     &--center
       justify-content: center
-label
+div
   &.invalid
+    position: absolute
+    margin-top: 50px
+    padding: 2px
     color: tomato
 input
+  outline: none
   &.invalid
     border-bottom: 1px solid tomato
 
