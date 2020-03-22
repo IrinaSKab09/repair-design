@@ -857,6 +857,9 @@ img {
     text-align: center;
     text-transform: uppercase;
     color: #E3B873; }
+  .footer__phone {
+    text-decoration: none;
+    color: #E3B873; }
   .footer__links {
     display: flex;
     justify-content: center;
@@ -984,6 +987,10 @@ img {
     width: 55%; }
   .col-55 {
     width: 45%; }
+  .footer__text:hover {
+    display: none; }
+  .footer__link-hover {
+    display: none; }
   .footer__map {
     max-width: 50rem;
     max-height: 30rem; } }
@@ -1251,6 +1258,12 @@ img {
     display: none; }
   .footer__text {
     font-size: 1rem; } }
+
+@media screen and (min-width: 992px) {
+  .footer__phone:hover {
+    color: #ffffff; }
+  .footer__link:hover {
+    background: #959595; } }
 
 @media screen and (max-height: 610px) {
   .hero__scroll-down {
