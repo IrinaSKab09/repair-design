@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: 'Futura Book';
   src: url("../fonts/futura/FuturaBookC.woff") format("woff"), url("../fonts/futura/FuturaBookC.woff2") format("woff2");
@@ -879,13 +880,90 @@ img {
     display: flex;
     flex-direction: column; }
   .footer__map {
-    margin: auto;
-    margin-bottom: 4.75rem;
-    width: 66.071rem;
-    height: 33.214rem; }
+    width: 100%;
+    height: 100%; }
   .footer__menu {
     background-color: #131313;
     padding: 47px 0; }
+
+/*Блок-обертка, где мы задаем фоновое изображение скриншотом как на карте*/
+.ymap-container {
+  position: relative;
+  margin: auto;
+  margin-bottom: 4.75rem;
+  background: #ffffff url("../img/map.jpg") no-repeat center;
+  width: 100%;
+  max-width: 66.071rem;
+  height: 33.214rem;
+  cursor: pointer; }
+
+#map {
+  position: relative;
+  z-index: 7;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  background-color: transparent; }
+
+/* Индикатор загрузки, который показывается до загрузки карты */
+.loader {
+  position: absolute;
+  z-index: 15;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  color: #000000;
+  transition: opacity .7s ease;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.55); }
+
+.loader:after,
+.loader:before {
+  box-sizing: border-box; }
+
+.loader.is-active {
+  top: 0;
+  opacity: 1; }
+
+.loader-default:after {
+  position: absolute;
+  top: calc(50% - 24px);
+  left: calc(50% - 24px);
+  width: 48px;
+  height: 48px;
+  content: '';
+  -webkit-animation: rotation 1s linear infinite;
+  animation: rotation 1s linear infinite;
+  border: solid 8px #ffffff;
+  border-left-color: transparent;
+  border-radius: 50%; }
+
+@-webkit-keyframes rotation {
+  from {
+    transform: rotate(0); }
+  to {
+    transform: rotate(359deg); } }
+
+@keyframes rotation {
+  from {
+    transform: rotate(0); }
+  to {
+    transform: rotate(359deg); } }
+
+@-webkit-keyframes blink {
+  from {
+    opacity: .5; }
+  to {
+    opacity: 1; } }
+
+@keyframes blink {
+  from {
+    opacity: .5; }
+  to {
+    opacity: 1; } }
 
 .modal {
   opacity: 0;
@@ -990,10 +1068,11 @@ img {
   .footer__text:hover {
     display: none; }
   .footer__link-hover {
-    display: none; }
-  .footer__map {
-    max-width: 50rem;
-    max-height: 30rem; } }
+    display: none; } }
+
+.ymap-container {
+  max-width: 50rem;
+  max-height: 30rem; }
 
 @media screen and (max-width: 768px) {
   .nav {
@@ -1047,9 +1126,10 @@ img {
     .swiper-slide__img {
       margin: 2.7rem 0 0 0;
       width: 28.33rem;
-      height: 16.83rem; }
-  .footer__map {
-    max-width: 40rem; } }
+      height: 16.83rem; } }
+
+.ymap-container {
+  max-width: 40rem; }
 
 @media screen and (max-width: 576px) {
   html, body {
@@ -1214,11 +1294,6 @@ img {
       margin-bottom: 5.8rem; }
     .footer__button {
       padding: 1.5rem 11.75rem; }
-    .footer__map {
-      margin-bottom: 3.5rem;
-      order: -1;
-      max-width: 28.33rem;
-      max-height: 21.25rem; }
     .footer__text {
       max-width: 26.5rem;
       font-size: 1.5rem; }
@@ -1229,6 +1304,11 @@ img {
       padding: 0; }
     .footer__menu {
       display: none; }
+  .ymap-container {
+    margin-bottom: 3.5rem;
+    order: -1;
+    max-width: 28.33rem;
+    max-height: 21rem; }
   .policy__label--center {
     justify-content: flex-start;
     font-size: 1.33rem; } }
@@ -1254,10 +1334,10 @@ img {
     padding: 1rem; }
     .control__button, .footer__button {
       padding: 1rem 9rem; }
-  .footer__map {
-    display: none; }
   .footer__text {
-    font-size: 1rem; } }
+    font-size: 1rem; }
+  .ymap-container {
+    display: none; } }
 
 @media screen and (min-width: 992px) {
   .footer__phone:hover {

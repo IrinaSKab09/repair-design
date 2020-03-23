@@ -57,9 +57,9 @@
     &__link
       &-hover
         display: none
-    &__map
-      max-width: 50rem
-      max-height: 30rem
+.ymap-container
+  max-width: 50rem
+  max-height: 30rem
 
 @media screen and (max-width: 768px)
   .nav
@@ -123,9 +123,8 @@
         margin: 2.7rem 0 0 0
         width: 28.33rem
         height: 16.83rem
-  .footer
-    &__map
-      max-width: 40rem
+.ymap-container
+  max-width: 40rem
   
 @media screen and (max-width: 576px)
   html, body
@@ -288,11 +287,6 @@
       margin-bottom: 5.8rem
     &__button
       padding: 1.5rem 11.75rem
-    &__map
-      margin-bottom: 3.5rem
-      order: -1
-      max-width: 28.33rem
-      max-height: 21.25rem
     &__text
       max-width: 26.5rem
       font-size: 1.5rem
@@ -303,6 +297,11 @@
       padding: 0    
     &__menu
       display: none
+  .ymap-container  
+    margin-bottom: 3.5rem
+    order: -1
+    max-width: 28.33rem
+    max-height: 21rem
   .policy
     &__label
       &--center
@@ -332,10 +331,10 @@
     &__button
       padding: 1rem 9rem
   .footer
-    &__map
-      display: none
     &__text
       font-size: 1rem
+  .ymap-container  
+    display: none
 
 @media screen and (min-width: 992px)
   .footer

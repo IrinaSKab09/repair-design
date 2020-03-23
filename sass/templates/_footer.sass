@@ -71,13 +71,82 @@
     display: flex
     flex-direction: column
   &__map
-    margin: auto
-    margin-bottom: 4.75rem
-    width: 66.071rem
-    height: 33.214rem
+    width: 100%
+    height: 100%
   &__menu
     background-color: $dark
     padding: 47px 0
+
+/*Блок-обертка, где мы задаем фоновое изображение скриншотом как на карте*/
+.ymap-container 
+  position: relative
+  margin: auto
+  margin-bottom: 4.75rem
+  background: $light url('../img/map.jpg') no-repeat center
+  width: 100%
+  max-width: 66.071rem
+  height: 33.214rem
+  cursor: pointer
+
+#map 
+  position: relative
+  z-index: 7
+  width: 100%
+  height: 100%
+  cursor: pointer
+  background-color: transparent
+
+/* Индикатор загрузки, который показывается до загрузки карты */
+.loader 
+  position: absolute
+  z-index: 15
+  top: 0
+  left: 0
+  box-sizing: border-box
+  width: 100%
+  height: 100%
+  overflow: hidden
+  color: #000000
+  transition: opacity .7s ease
+  opacity: 0
+  background-color: rgba(0,0,0,.55)
+
+.loader:after,
+.loader:before 
+  box-sizing: border-box
+
+.loader.is-active 
+  top: 0
+  opacity: 1
+
+.loader-default:after 
+  position: absolute
+  top: calc(50% - 24px)
+  left: calc(50% - 24px)
+  width: 48px
+  height: 48px
+  content: ''
+  animation: rotation 1s linear infinite
+  border: solid 8px #ffffff
+  border-left-color: transparent
+  border-radius: 50%
+ 
+@keyframes rotation 
+  from 
+    transform: rotate(0)
+  
+  to 
+    transform: rotate(359deg)
+  
+@keyframes blink 
+  from 
+    opacity: .5
+
+  to 
+    opacity: 1
+  
+
+
 
     
    
