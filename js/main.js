@@ -121,6 +121,22 @@ $(document).ready(function () {
       policyCheckbox: {
         required: "Необходимо проставить отметку"
       }
+    },
+    //отправка формы
+    submitHandler: function(form) {
+      $.ajax({
+        type: "POST", //метод
+        url: "send.php", //куда отправляется форма
+        data: $(form).serialize(), //передача данных из формы
+        success: function (response) {
+          $(form)[0].reset(); //очистка формы
+          modal.removeClass('modal--visible'); //закрытие модального окна
+          document.location.href='thanks.html';
+        },
+        error: function (response) {
+          console.error('Ошибка запроса ' + response);
+        }
+      });
     }
   });
 
@@ -155,6 +171,21 @@ $(document).ready(function () {
       policyCheckbox: {
         required: "Необходимо проставить отметку"
       }
+    },
+    //отправка формы
+    submitHandler: function(form) {
+      $.ajax({
+        type: "POST", //метод
+        url: "send.php", //куда отправляется форма
+        data: $(form).serialize(), //передача данных из формы
+        success: function (response) {
+          $(form)[0].reset(); //очистка формы
+          document.location.href='thanks.html';
+        },
+        error: function (response) {
+          console.error('Ошибка запроса ' + response);
+        }
+      });
     }
   });
 
@@ -196,11 +227,60 @@ $(document).ready(function () {
       policyCheckbox: {
         required: "Необходимо проставить отметку"
       }
+    },
+    //отправка формы
+    submitHandler: function(form) {
+      $.ajax({
+        type: "POST", //метод
+        url: "send.php", //куда отправляется форма
+        data: $(form).serialize(), //передача данных из формы
+        success: function (response) {
+          $(form)[0].reset(); //очистка формы
+          document.location.href='thanks.html';
+        },
+        error: function (response) {
+          console.error('Ошибка запроса ' + response);
+        }
+      });
     }
   });
 
   // маска для телефона
 
   $('[type=tel]').mask('+7(000) 000-00-00', {placeholder: "+7 (___) ___-__-__"});
+
+  //создание yandex карты
+  ymaps.ready(function () {
+    var myMap = new ymaps.Map('map', {
+            center: [47.244729, 39.723187],
+            zoom: 9
+        }, {
+            searchControlProvider: 'yandex#search'
+        }),
+
+        // Создаём макет содержимого.
+        MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+            '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
+        ),
+
+        myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
+            hintContent: 'Офис Repair-Design',
+            balloonContent: 'Вход со двора'
+        }, {
+            // Опции.
+            // Необходимо указать данный тип макета.
+            iconLayout: 'default#image',
+            // Своё изображение иконки метки.
+            iconImageHref: 'img/location.png',
+            // Размеры метки.
+            iconImageSize: [32, 32],
+            // Смещение левого верхнего угла иконки относительно
+            // её "ножки" (точки привязки).
+            iconImageOffset: [-5, -38]
+        });
+
+    myMap.geoObjects
+        .add(myPlacemark);
+  });
 });
 

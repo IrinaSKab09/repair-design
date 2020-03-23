@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
   <link rel="stylesheet" href="css/animate.css">
   <link rel="stylesheet" href="css/style.css">
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=3bae027f-df01-4386-8c89-d06f47467b08&lang=ru_RU" type="text/javascript"></script>
   <title>Document</title>
 </head>
 
@@ -503,8 +504,10 @@
           <a href="#" class="footer__link"><img src="img/footer/icon-1.svg" alt="mail"></a>
           <a href="#" class="footer__link"><img src="img/footer/icon-2.svg" alt="instagram"></a>
         </div>
-        <div class="map footer__map">
-          <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A54ce62ceb22cbc677aa582d33ec3d7ced1759d8f4d11df759c21b899d72b9a11&amp;width:100%;height:100%;lang=ru_RU&amp"></script>
+        <div class="ymap-container">
+          <div class="loader loader-default">
+            <div class="map footer__map" id="map"></div>
+          </div>
         </div>
       </div>
     </div>
