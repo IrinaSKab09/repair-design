@@ -189,6 +189,7 @@ $(document).ready(function () {
     }
   });
 
+
   $('.footer__form').validate({
     errorClass: "invalid",
     errorElement: "div",
@@ -247,7 +248,23 @@ $(document).ready(function () {
 
   // маска для телефона
 
-  $('[type=tel]').mask('+7(000) 000-00-00', {placeholder: "+7 (___) ___-__-__"});
+  $('[type=tel]').mask('+7(000) 000-00-00', {placeholder: ''});
+
+  var player;
+  $('.video__play').on('click', function onYouTubeIframeAPIReady() {
+    player = new YT.Player('player', {
+      height: '100%',
+      width: '100%',
+      videoId: '8awdQRP816c',
+      events: {
+        'onReady': videoPlay,
+      }
+    });
+  })
+
+  function videoPlay(event) {
+    event.target.playVideo();
+  }
 
 /*   //создание yandex карты
   ymaps.ready(function () {
@@ -317,6 +334,7 @@ var check_if_load = false;
             // её "ножки" (точки привязки).
             iconImageOffset: [-5, -38]
         });
+    myMap.behaviors.disable('scrollZoom');
     myMap.geoObjects
     .add(myPlacemark);
 // Получаем первый экземпляр коллекции слоев, потом первый слой коллекции
@@ -410,4 +428,24 @@ $(function() {
 //Запускаем основную функцию
 ymap();
 
+});
+
+//плавный переход по кнопке "Листайте вниз"
+ $(document).ready(function(){
+    $(".hero__scroll-down").on("click", function (event) {
+        event.preventDefault();
+        var id  = $(this).attr('href'),
+            top = $(id).offset().top;
+        $('body,html').animate({scrollTop: top}, 1500);
+    });
+});
+
+//плавный переход по навигации
+$(document).ready(function(){
+  $("#menu").on("click","a", function (event) {
+      event.preventDefault();
+      var id  = $(this).attr('href'),
+          top = $(id).offset().top;
+      $('body,html').animate({scrollTop: top}, 2000);
+  });
 });

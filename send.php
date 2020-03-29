@@ -19,15 +19,15 @@ try {
     $mail->CharSet = "utf-8";
     $mail->SMTPDebug = 0;                      // Enable verbose debug output
     $mail->isSMTP();                                            // Send using SMTP
-    $mail->Host       = 'smtp.gmail.com';                    // Set the SMTP server to send through
+    $mail->Host       = 'smtp.yandex.ru';                    // Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
-    $mail->Username   = 'IrnaSKab@gmail.com';                     // SMTP username
-    $mail->Password   = 'Dtcyf2020';                               // SMTP password
+    $mail->Username   = 'repair-design2020@yandex.ru';                     // SMTP username
+    $mail->Password   = 'ghbdtn15';                               // SMTP password
     $mail->SMTPSecure = 'ssl';         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` also accepted
     $mail->Port       = 465;                                    // TCP port to connect to
 
     //Recipients
-    $mail->setFrom('IrnaSKab@gmail.com', 'Ирина');
+    $mail->setFrom('repair-design2020@yandex.ru', 'repair-design');
     $mail->addAddress('IrinaSKab@yandex.ru');     // Add a recipient
 
     // Content

@@ -50,16 +50,9 @@
       width: 55%
     &-55
       width: 45%
-  .footer
-    &__text
-      &:hover
-        display: none
-    &__link
-      &-hover
-        display: none
-.ymap-container
-  max-width: 50rem
-  max-height: 30rem
+  .ymap-container
+    max-width: 50rem
+    max-height: 30rem
 
 @media screen and (max-width: 768px)
   .nav
@@ -123,14 +116,17 @@
         margin: 2.7rem 0 0 0
         width: 28.33rem
         height: 16.83rem
-.ymap-container
-  max-width: 40rem
+  .ymap-container
+    max-width: 40rem
   
 @media screen and (max-width: 576px)
   html, body
     overflow-x: hidden
   .container
     max-width: 48rem
+    width: 90%
+  .section
+    padding: 5rem 0
   .logo
     font-size: 1rem
   .contacts
@@ -174,6 +170,9 @@
       max-width: 24.3rem
       font-size: 1.17rem
       line-height: 160%
+  .projects
+    padding-top: 0
+    padding-bottom: 0
   .types
     &__section-title
       margin-bottom: 3.2rem         
@@ -198,6 +197,7 @@
       padding: 1rem 2.8rem
       font-size: 1.25rem
   .design
+    background: $dark
     &__section-title
       color: $light
     &__section-description
@@ -270,7 +270,7 @@
     &__wrap
       margin-top: 0
       margin-bottom: 1.3rem
-      padding: 2.5rem 1.1rem
+      padding: 2.5rem 0
       background-color: $dark
     &__title
       font-size: 1.67rem
@@ -281,15 +281,20 @@
         flex-basis: 100%
         &--bottom
           margin-bottom: 2rem
+          border-bottom: 0.3px $light solid
         &--full-width
           margin-bottom: 0.5rem
     &__policy
       margin-bottom: 5.8rem
     &__button
-      padding: 1.5rem 11.75rem
+      padding: 1.5rem 10.75rem
     &__text
+      order: 2
+      margin-bottom: 1.85rem
       max-width: 26.5rem
       font-size: 1.5rem
+    &__links
+      order: 3
     &__link
       width: 39px
       height: 39px
@@ -297,20 +302,20 @@
       padding: 0    
     &__menu
       display: none
-  .ymap-container  
+  .ymap-container
+    order: 1  
     margin-bottom: 3.5rem
-    order: -1
-    max-width: 28.33rem
-    max-height: 21rem
+    max-width: 33rem
+    max-height: 21.3rem
   .policy
     &__label
       &--center
         justify-content: flex-start
         font-size: 1.33rem
 
-@media screen and (max-width: 375px)
+@media screen and (max-width: 374px)
   .container
-    max-width: 30.417rem
+    max-width: 28rem
     width: 100%
   .hero
     &__content
@@ -325,26 +330,60 @@
   .projects
     padding: 2rem
 
-@media screen and (max-width: 350px)
+@media screen and (max-width: 355px)
+  .menu
+    padding: 0 1rem
   .control, .footer
     padding: 1rem
     &__button
       padding: 1rem 9rem
+  img
+    max-width: 90%
+  .col
+    &-30
+      width: 95%
+  .design
+    &__image
+      min-width: 25rem
   .footer
+    &__wrap
+      max-width: 23rem
     &__text
       font-size: 1rem
   .ymap-container  
     display: none
 
 @media screen and (min-width: 992px)
-  .footer
+  .nav
+    &__item
+     &:hover
+      color: $primary 
+  .button
+    &:hover
+      cursor: pointer
+      background: $orange
+  .menu
+    &__logo
+      &:hover
+        color: $light
+  .instagram
+    &__link
+      &:hover
+        color: $light
+  .hero
+    &__scroll
+      &-down
+        &:hover
+          color: $primary
+  .footer, .contacts
     &__phone
       &:hover
         color: $light
     &__link
       &:hover
         background: $secondary
-        
+
+  
 @media screen and (max-height: 610px)
   .hero
     &__scroll-down
